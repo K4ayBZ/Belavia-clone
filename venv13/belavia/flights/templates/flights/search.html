@@ -1,0 +1,17 @@
+<h1>Поиск рейсов</h1>
+<form method="get">
+    {{ form.as_p }}
+    <button type="submit">Найти</button>
+</form>
+
+{% if flights %}
+    <ul>
+        {% for flight in flights %}
+            <li>
+                {{ flight.departure_city }} → {{ flight.arrival_city }} —
+                {{ flight.departure_time }} —
+                <a href="{% url 'book_flight' flight.id %}">Забронировать</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
