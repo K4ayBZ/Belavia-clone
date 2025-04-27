@@ -3,4 +3,6 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Войти</button>
+    <p>или</p>
+    <button><a href="{% url 'register' %}">Зарегистрироваться</a></button>
 </form>

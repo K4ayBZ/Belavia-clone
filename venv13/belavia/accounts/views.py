@@ -25,5 +25,9 @@ def profile(request):
     return render(request, 'accounts/profile.html', {'user': request.user})
 from django.contrib.auth.views import LoginView
 
+def logout(request):
+    return render(request, 'accounts/logout.html')
+
+
 class CustomLoginView(LoginView):
-    template_name = 'accounts/templates/registration/login.html'
+    template_name = 'accounts/templates/accounts/login.html'
