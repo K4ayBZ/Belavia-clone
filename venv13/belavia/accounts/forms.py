@@ -1,20 +1,13 @@
-from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django import forms
 
-class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
-    password_confirmation = forms.CharField(widget=forms.PasswordInput)
+
+class UserRegistrationForm(UserCreationForm):
+    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
 
     class Meta:
         model = User
-        fields = ['username', 'email']
-
-    def clean(self):
-        cleaned_data = super().clean()
-        password = cleaned_data.get('password')
-        password_confirmation = cleaned_data.get('password_confirmation')
-
-        if password != password_confirmation:
-            raise forms.ValidationError("Пароли не совпадают!")
-
-        return cleaned_data
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
