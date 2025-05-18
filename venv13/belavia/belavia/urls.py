@@ -14,28 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('flights/', include('flights.urls')),
-]
-from django.contrib import admin
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('flights/', include('flights.urls')),
-]
 from django.contrib.auth import views as auth_views
+
+from belavia import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -43,12 +28,4 @@ urlpatterns = [
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     path('accounts/logout.html/', auth_views.LogoutView.as_view(), name='logout.html'),
     path('flights/', include('flights.urls')),
-]
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='accounts/login.html')),
-    path('accounts/logout.html/', auth_views.LogoutView.as_view(), name='logout.html'),
-    path('flights/', include('flights.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -13,7 +13,9 @@ def register(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('flights:search_flights')  # Перенаправляем на страницу поиска рейсов
+            return redirect('profile')
+        else:
+            return render(request, 'accounts/register.html', {'form': form, 'errors': form.errors})
     else:
         form = UserRegistrationForm()
 
