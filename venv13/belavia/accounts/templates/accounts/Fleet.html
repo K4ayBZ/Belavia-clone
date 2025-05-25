@@ -1,0 +1,98 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+<link rel="stylesheet" href="{% static 'css/kaiadmin.css' %}">
+<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #77bcf1;
+
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+            box-shadow: 10px 10px 10px black;
+        }
+        .post img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+
+</head>
+<body>
+    <div class="container">
+<h1>Наш флот:</h1>
+        <br>
+<h1>Boeing 737-300</h1>
+<img src="{% static 'img/733.jpg' %}" alt="733">
+<h1> 2 самолета: EW-366PA и EW-254PA</h1>
+<p>ICAO code: B733<br>
+завод-изготовитель:	Renton<br>
+Длина: 33,4 м<br>
+Размах крыла: 28,9 м<br>
+Высота: 11,1 м<br>
+Макс. взлетный вес: 56 470 кг<br>
+Крейсерская скорость: 780–793 км/ч (Mach 0,74)<br>
+Дальность полета: 4 200 – 4 600 км (зависит от нагрузки и конфигурации)<br>
+Потолок высоты: 11 300 м (37 000 футов)<br>
+Возраст ~29.6 лет<br>
+*на фотке изображен Boeing 737-300 EW-254PA<br>
+*Boeing 737-300 EW-366PA временно не эксплуатируется</p><br>
+
+
+
+
+
+<h1>Boeing 737-800</h1>
+<img src="{% static 'img/738.jpg' %}" alt="738">
+<h1> 5 самолетов: EW-455PA, EW-456PA, EW-457PA, EW-527PA, EW-544PA</h1>
+<p>ICAO code: B738<br>
+завод-изготовитель:	Renton<br>
+Длина: 39,5 m<br>
+Размах крыла: 35,7 m<br>
+Высота: 12,5 m<br>
+Максимальный вес при взлете: 79000 кг<br>
+Крейсерская скорость: 842 км/ч (Mach 0,79) <br>
+Дальность полета: 5 769 km<br>
+Потолок высоты: 41 000 ft (12 500 m)<br>
+Емкость топливного бака (крыло+фюзеляж): 7,8 t + 13,1 t<br>
+Возраст ~11.5 лет<br>
+*на фотке изображен Boeing 737-800 EW-456PA<br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {% block content %}{% endblock %}
+    <br><button class="btn btn-secondary"><a href="{% url 'main' %}">На главную</a></button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

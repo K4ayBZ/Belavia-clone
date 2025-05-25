@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #77bcf1;
+
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+            box-shadow: 10px 10px 10px black;
+        }
+        .post img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+
+</head>
+<body>
+    <div class="container">
+<h1>vadsa</h1>
+    {% block content %}{% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

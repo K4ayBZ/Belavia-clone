@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+<link rel="stylesheet" href="{% static 'css/kaiadmin.css' %}">
+<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+
+<img src="{% static 'img/Belavia.png' %}" alt="БЕЛАВИА - Авиакомпания Республики Беларусь"> <a href="{% url 'profile' %}" class="btn btn-primary btn-round">Profile</a> <a href="{% url 'register' %}" class="btn btn-primary btn-round">Registration</a> <a href="{% url 'flights:search_flights' %}" class="btn btn-primary btn-round">Booking</a> <a href="{% url 'history' %}" class="btn btn-primary btn-round">History</a> <a href="{% url 'fleet' %}" class="btn btn-primary btn-round">Our fleet</a>
+
+</html>

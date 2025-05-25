@@ -1,8 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+<link rel="stylesheet" href="{% static 'css/kaiadmin.css' %}">
+<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+
 <h1>Вход</h1>
-<form method="POST">
+<form class="form-group" method="POST">
     {% csrf_token %}
+
     {{ form.as_p }}
-    <button type="submit">Войти</button>
+    <button type="submit" class="btn btn-success">Войти</button>
     <p>или</p>
-    <button><a href="{% url 'register' %}">Зарегистрироваться</a></button>
+    <button class="btn btn-warning"><a href="{% url 'register' %}">Зарегистрироваться</a></button>
 </form>

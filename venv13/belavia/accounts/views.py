@@ -37,3 +37,14 @@ def logout(request):
 
 class CustomLoginView(LoginView):
     template_name = 'accounts/templates/accounts/login.html'
+
+def main(request):
+    return render(request, 'accounts/main.html')
+
+def history(request):
+    return render(request, 'accounts/history.html')
+
+def fleet(request):
+    return render(request, 'accounts/Fleet.html')
+def base(request):
+    return render(request, 'accounts/base.html')
