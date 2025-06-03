@@ -10,5 +10,11 @@ urlpatterns = [
     path('main/', views.main, name='main'),
     path('history/', views.history, name='history'),
     path('fleet/', views.fleet, name='fleet'),
-    path('base/', views.base, name='base')
+    path('base/', views.base, name='base'),
+    path('base1/', views.base1, name='base1'),
+    path('base3/', views.base3, name='base3'),
+    path('base4/', views.base4, name='base4'),
+    path('base5/', views.base5, name='base5'),
+    path('base6/', views.base6, name='base6'),
+    path('schedule/', views.schedule, name='schedule'),
 ]

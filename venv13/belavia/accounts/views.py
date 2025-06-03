@@ -1,7 +1,9 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import redirect
-
+from django.contrib.auth.views import LoginView
 from .forms import UserRegistrationForm
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
@@ -22,21 +24,20 @@ def register(request):
     return render(request, 'accounts/register.html', {'form': form})
 
 
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+
 
 
 @login_required
 def profile(request):
     return render(request, 'accounts/profile.html', {'user': request.user})
-from django.contrib.auth.views import LoginView
+
 
 def logout(request):
     return render(request, 'accounts/logout.html')
 
 
 class CustomLoginView(LoginView):
-    template_name = 'accounts/templates/accounts/login.html'
+    template_name = 'accounts/login.html'
 
 def main(request):
     return render(request, 'accounts/main.html')
@@ -48,3 +49,15 @@ def fleet(request):
     return render(request, 'accounts/Fleet.html')
 def base(request):
     return render(request, 'accounts/base.html')
+def base1(request):
+    return render(request, 'accounts/base1.html')
+def base3(request):
+    return render(request, 'accounts/base3.html')
+def base4(request):
+    return render(request, 'accounts/base4.html')
+def base5(request):
+    return render(request, 'accounts/base5.html')
+def base6(request):
+    return render(request, 'accounts/base6.html')
+def schedule(request):
+    return render(request, 'accounts/schedule.html')
