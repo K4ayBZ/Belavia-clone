@@ -4,13 +4,88 @@
 <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 <link rel="stylesheet" href="{% static 'css/kaiadmin.css' %}">
 <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #77bcf1;
 
-<img src="{% static 'img/Belavia.png' %}" alt="БЕЛАВИА - Авиакомпания Республики Беларусь"> <a href="{% url 'profile' %}" class="btn btn-primary btn-round">Profile</a> <a href="{% url 'register' %}" class="btn btn-primary btn-round">Registration</a> <a href="{% url 'flights:search_flights' %}" class="btn btn-primary btn-round">Booking</a> <a href="{% url 'history' %}" class="btn btn-primary btn-round">History</a> <a href="{% url 'fleet' %}" class="btn btn-primary btn-round">Our fleet</a> <a href="{% url 'schedule' %}" class="btn btn-primary btn-round">Табло вылета/прилета</a>
+        }
 
-</html>
-<main>
+        .container {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+            box-shadow: 10px 10px 10px black;
+        }
+        .post img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
 
+</head>
 <body>
+<div class="container">
+
+    <img src="{% static 'img/Belavia.png' %}" alt="БЕЛАВИА - Авиакомпания Республики Беларусь"> <a
+        href="{% url 'profile' %}" class="btn btn-primary btn-round">Profile</a> <a href="{% url 'register' %}"
+                                                                                    class="btn btn-primary btn-round">Registration</a>
+    <a href="{% url 'flights:search_flights' %}" class="btn btn-primary btn-round">Booking</a> <a
+        href="{% url 'history' %}" class="btn btn-primary btn-round">History</a> <a href="{% url 'fleet' %}"
+                                                                                    class="btn btn-primary btn-round">Our
+    fleet</a> <a href="{% url 'schedule' %}" class="btn btn-primary btn-round">Табло вылета/прилета</a>
+
+    <main>
+        <br><br>
+        <h1>Основным хабом авиакомпании «Белавиа» является Национальный аэропорт Минск</h1>
+        <img src="{% static 'img/UMMS.webp' %}" alt="Minsk-2"><br><br>
+        <h5>Национальный аэропорт «Минск» (бел. Нацыянальны аэрапорт «Мінск») — главный международный аэропорт в
+            Беларуси. Находится в 21 км (по шоссе — 41 км) от центра Минска. Создан 1 июля 1983 года как Второй Минский
+            объединённый авиаотряд.</h5><br><br>
+        <h1>Новая эра</h1>
+        <img src="{% static 'img/a332.jpg' %}" alt="332">
+        <br><br>
+        <h5>🙌✈️Новая эра: теперь во флоте «Белавиа» есть абсолютно новый для белорусской авиации тип воздушных судов —
+            Airbus A330-200!
+
+            Что это значит для авиакомпании?
+            Возможность совершать дальнемагистральные рейсы и открывать новые маршруты. Знаем: этого ждут многие!
+
+            И, конечно, мы очень много готовились:<br>
+            ➡️Усиленно учились. Причем все: пилоты, техники, бортпроводники и сотни коллег из других подразделений.<br>
+            ➡️Отточили навыки на практике. Не только в Беларуси, но и за рубежом!<br>
+            ➡️Настроили новые процессы технического обслуживания новых самолетов, загрузки багажа, обслуживания на борту
+        </h5>
+        <br><br>
+        <h1>Кратко об «Белавиа»</h1>
+        <h5>«Белавиа» (бел. Белавія) — белорусская государственная авиакомпания со штаб-квартирой в Минске. Образована в
+            1996 году. Основные рейсовые и чартерные международные полёты осуществляет из Национального аэропорта Минск.
+            Полное наименование — Открытое акционерное общество «Авиакомпания «Белавиа».</h5>
+        Более подробно вы можете ознакомиться здесь -
+<button class="btn btn-success"><a href="{% url 'history' %}">История</a></button><br>
+       <h5> ОАО «Авиакомпания «Белавиа»<br>
+Генеральный директор:<br>
+Чергинец Игорь Николаевич<br>
+
+Почтовый адрес:<br>
+Республика Беларусь, 220004, г.Минск, ул. Немига, 14А</h5><br><br><br>
+        <p>ОАО «Авиакомпания «Белавиа».</p>
+    </main>
+    {% block content %}{% endblock %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+{% block extra_js %}{% endblock %}
 
 </body>
-</main>
+</html>
